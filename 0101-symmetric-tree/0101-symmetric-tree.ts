@@ -17,15 +17,8 @@ function isSymmetric(root: TreeNode | null): boolean {
     return true;
   }
 
-  if (root.left === null && root.right === null) {
-    return true;
-  }
-
-  if (root.left === null || root.right === null) {
-    return false;
-  }
-
   let q: TreeNode[] = [root];
+
   while (q.length) {
     let currentLength = q.length;
     let nextQ: TreeNode[] = [];
@@ -52,6 +45,10 @@ function isSymmetric(root: TreeNode | null): boolean {
       if (l.val !== r.val) {
         return false;
       }
+    }
+    
+    if (nextQ.length === 1) {
+      return false;
     }
 
     q = nextQ;
