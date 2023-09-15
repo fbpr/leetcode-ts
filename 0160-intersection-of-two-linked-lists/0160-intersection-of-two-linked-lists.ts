@@ -15,8 +15,8 @@ function getIntersectionNode(headA: ListNode | null, headB: ListNode | null): Li
         return null;
     }
 
-    let pA = headA;
-    let pB = headB;
+    let pA: ListNode = headA;
+    let pB: ListNode = headB;
     while (pA !== pB) {
         if (!pA) {
             pA = headB;
